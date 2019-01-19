@@ -163,12 +163,13 @@ describe "ActiveRecord American Gladiator" do
 
       # -----------------------------------------------------------------------------
 
-binding.pry
-      # most_popular_items =
-      # Item
-      # .joins(:order_items)
-      # .order("COUNT(items.id) DESC")
-      # .limit(2)
+
+      most_popular_items =
+      Item
+      .joins(:order_items)
+      .order("COUNT(items.id) DESC")
+      .group(:item_id)
+      .limit(2)
 
       # Changeable Stop
 
